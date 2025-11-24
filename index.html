@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca Celestial - Histórias Bíblicas</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Lora:ital,wght@0,400;0,600;1,400&family=Nunito:wght@400;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- PDF Generation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!-- Tela de Login -->
+        <section id="login-screen" class="screen active">
+            <div class="login-container">
+                <div class="logo-area">
+                    <h1>Biblioteca Celestial ☁️</h1>
+                    <p>Histórias que tocam o coração</p>
+                </div>
+                <form id="login-form">
+                    <label for="access-code">Digite a palavra mágica:</label>
+                    <input type="password" id="access-code" placeholder="Ex: jesus" required>
+                    <button type="submit" class="btn-primary">Entrar na Estante</button>
+                    <p class="hint-text">Dica: A palavra é o nome do nosso Salvador (em minúsculas).</p>
+                </form>
+            </div>
+        </section>
+
+        <!-- Estante Virtual -->
+        <section id="bookshelf-screen" class="screen hidden">
+            <header class="main-header">
+                <div class="header-content">
+                    <h2>Minha Estante 📚</h2>
+                    <button id="help-btn" class="btn-icon" title="Ajuda">❓</button>
+                </div>
+            </header>
+
+            <div class="welcome-message">
+                <h3>Bem-vindo à sua Biblioteca de Histórias Sagradas! 🌟</h3>
+                <p>Escolha uma história abaixo para começar a ler.</p>
+            </div>
+
+            <div class="books-grid" id="books-grid">
+                <!-- Livros serão inseridos via JS -->
+            </div>
+        </section>
+
+        <!-- Leitor de Ebooks -->
+        <section id="reader-screen" class="screen hidden">
+            <div class="reader-header">
+                <button id="back-to-shelf" class="btn-secondary">⬅ Voltar</button>
+                <h3 id="current-book-title">Título do Livro</h3>
+                <div class="header-controls">
+                    <button id="download-pdf" class="btn-primary" style="font-size: 0.9rem; padding: 0.5rem 1rem;">⬇
+                        Baixar PDF</button>
+                    <div class="page-indicator" id="page-indicator">Página 1 de 10</div>
+                </div>
+            </div>
+
+            <div class="reader-container">
+                <button id="prev-page" class="nav-btn">❮</button>
+
+                <div class="reader-content" id="reader-content">
+                    <!-- Conteúdo da página atual -->
+                </div>
+
+                <button id="next-page" class="nav-btn">❯</button>
+            </div>
+        </section>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/app.js"></script>
+</body>
+
+</html>
